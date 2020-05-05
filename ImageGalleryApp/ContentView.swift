@@ -71,15 +71,15 @@ struct GridView: View {
                 HStack(alignment: .center) {
                     ForEach(0..<2) {
                        j in
-//                        Image(uiImage: self.images[i*2+j])
-//                        .resizable().scaledToFit()
-                        WebImage(url: URL(string: "https://nokiatech.github.io/heif/content/images/ski_jump_1440x960.heic"))
-                        // Supports options and context, like `.delayPlaceholder` to show placeholder only when error
-                        .onSuccess { image, cacheType in
-                            // Success
-                        }
-                        .resizable() // Resizable like SwiftUI.Image, you must use this modifier or the view will use the image bitmap size
-                        .placeholder(Image(uiImage: self.images[i*2+j]))
+                        Image(uiImage: self.images[i*2+j])
+                        .resizable().scaledToFit()
+//                        WebImage(url: URL(string: "https://nokiatech.github.io/heif/content/images/ski_jump_1440x960.heic"))
+//                        // Supports options and context, like `.delayPlaceholder` to show placeholder only when error
+//                        .onSuccess { image, cacheType in
+//                            // Success
+//                        }
+//                        .resizable() // Resizable like SwiftUI.Image, you must use this modifier or the view will use the image bitmap size
+//                        .placeholder(Image(uiImage: self.images[i*2+j]))
                     }
                 }.scaledToFill()
             }
