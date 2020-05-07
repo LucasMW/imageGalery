@@ -66,10 +66,7 @@ struct GridView: View {
                     ForEach(0..<2) {
                         j in
                         WebImage(url: self.urlFor(i: i, j: j))
-                            // Supports options and context, like `.delayPlaceholder` to show placeholder only when error
-                            .onSuccess { image, cacheType in
-                            }
-                            .resizable() // Resizable like SwiftUI.Image, you must use this modifier or the view will use the image bitmap size
+                            .resizable()
                             .placeholder(Image(systemName: "photo"))
                     }.scaledToFit()
                 }.scaledToFill()
