@@ -1,4 +1,4 @@
-# imagegalery
+# Image Gallery
 Images from flickr, using swiftUI
 
 
