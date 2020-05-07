@@ -19,9 +19,29 @@ class ImageGalleryAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSearch() {
+        let exp = XCTestExpectation()
+        let api = API()
+        api.search(query: "pikachu", completion: { (page) in
+            XCTAssert(page != nil)
+            exp.fulfill()
+        }, page: 1)
+        
+        wait(for: [exp], timeout: 2)
+    }
+    func testGetURLs() {
+        let exp = XCTestExpectation()
+        let api = API()
+        api.search(query: "game", completion: { (page) in
+            for photo in page?.photo ?? [] {
+                let id = photo.id ?? ""
+                api.getAllImagesForId(id: id) { (sizes) in
+                    XCTAssert(sizes.count > 0)
+                    exp.fulfill()
+                }
+            }
+        }, page: 1)
+        wait(for: [exp], timeout: 2)
     }
 
     func testPerformanceExample() {
