@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
+
+class PageViewModel: ObservableObject {
+    @Published var urls : [URL] = []
+}
