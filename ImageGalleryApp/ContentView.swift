@@ -17,7 +17,7 @@ struct ContentView : View {
     
     var images : [UIImage] = [code, bf, code, bf, code, bf, code, bf ]
     @State var urls : [URL] = []
-    @State private var query = "pikachu"
+    @State private var query = "???"
     @ObservedObject private var model = PageViewModel()
     
     var body: some View {
@@ -36,23 +36,7 @@ struct ContentView : View {
                 TextField("??", text: $query) .font(Font.system(size: 15, weight: .medium, design: .serif))
                  .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button("Search", action: {
-                    let api = API()
-                    api.search(query: self.query, completion: { (page) in
-                        print("return \(page?.photo?.count) itens")
-                        for photo in page?.photo ?? [] {
-                            let id = photo.id ?? ""
-                            print(id)
-                            self.model.urls.removeAll()
-                            api.getAllImagesForId(id: id) { (sizes) in
-                                print(sizes.count)
-                                let size = sizes.last
-                                let url = size?.source ?? ""
-                                self.model.urls.append(URL(string: url)!)
-                            }
-                            
-                        }
-                    }, page: 1)
-                    
+                    self.model.loadPhotos(query: self.query, page: 1)
                     })
             }.padding(.horizontal, 20)
             GridView(model: model)
