@@ -13,18 +13,8 @@ class API {
     let key = "f9cc014fa76b098f9e82f1c288379ea1"
     let base = "https://api.flickr.com/services/rest/?"
     
-    func search() {
-        //https://www.flickr.com/services/api/flickr.photos.search.html
-    }
-    func sizes() {
-        //flickr.photos.getSizes
-        //https://www.flickr.com/services/api/flickr.photos.getSizes.html
-        
-    }
     //search for photo ids
     func search(query: String, completion : @escaping (PhotoPage?)->(), page : Int = 1) {
-        //https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f9cc014fa76b098f9e82f1c288379ea1&tags=kitten&page=1&format=json&nojsoncallback=1
-        //https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f9cc014fa76b098f9e82f1c288379ea1&tags=Cat&page=1&format=json&nojsoncallback=1
         //https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f9cc014fa76b098f9e82f1c288379ea1&tags=Cat&page=1&format=json&nojsoncallback=1
         let url = "\(base)method=flickr.photos.search&api_key=\(key)&tags=\(query)&page=1&format=json&nojsoncallback=\(page)"
         let request = Alamofire.request(url)
