@@ -26,7 +26,6 @@ class PageViewModel: ObservableObject {
                     let url = size?.source ?? ""
                     self.urls.append(URL(string: url)!)
                 }
-                
             }
         }, page: 1)
     }

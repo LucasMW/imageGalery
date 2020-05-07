@@ -10,6 +10,7 @@
 		0DB24D15D65F563CCE13733C /* Pods_ImageGalleryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71561447E39DBF771E4B3A72 /* Pods_ImageGalleryApp.framework */; };
 		39D16E05F743CDFAAEDE1F22 /* Pods_ImageGalleryApp_ImageGalleryAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A98A9883F788377C5DDA6E8 /* Pods_ImageGalleryApp_ImageGalleryAppUITests.framework */; };
 		B6900ECF7BF5288661C8A9A9 /* Pods_ImageGalleryAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54445146E9A2F1280B0BE941 /* Pods_ImageGalleryAppTests.framework */; };
+		FF6B8E612460FB7A00FAC7B4 /* PageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B8E602460FB7A00FAC7B4 /* PageViewModel.swift */; };
 		FF73D70E245C957700DE8027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73D70D245C957700DE8027 /* AppDelegate.swift */; };
 		FF73D710245C957700DE8027 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73D70F245C957700DE8027 /* SceneDelegate.swift */; };
 		FF73D713245C957700DE8027 /* ImageGalleryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF73D711245C957700DE8027 /* ImageGalleryApp.xcdatamodeld */; };
@@ -56,6 +57,7 @@
 		B2A04646ED7B1F6D077B2F7F /* Pods-ImageGalleryApp-ImageGalleryAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGalleryApp-ImageGalleryAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ImageGalleryApp-ImageGalleryAppUITests/Pods-ImageGalleryApp-ImageGalleryAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3018E78845A028B0B3C8B65 /* Pods-ImageGalleryAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGalleryAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ImageGalleryAppTests/Pods-ImageGalleryAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8961911AC2DCF1F329D96C9 /* Pods-ImageGalleryAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGalleryAppTests.release.xcconfig"; path = "Target Support Files/Pods-ImageGalleryAppTests/Pods-ImageGalleryAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		FF6B8E602460FB7A00FAC7B4 /* PageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewModel.swift; sourceTree = "<group>"; };
 		FF73D70A245C957700DE8027 /* ImageGalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF73D70D245C957700DE8027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF73D70F245C957700DE8027 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				FF73D70D245C957700DE8027 /* AppDelegate.swift */,
 				FF73D70F245C957700DE8027 /* SceneDelegate.swift */,
 				FF73D714245C957700DE8027 /* ContentView.swift */,
+				FF6B8E602460FB7A00FAC7B4 /* PageViewModel.swift */,
 				FF73D716245C957A00DE8027 /* Assets.xcassets */,
 				FF73D71B245C957A00DE8027 /* LaunchScreen.storyboard */,
 				FF73D71E245C957A00DE8027 /* Info.plist */,
@@ -462,6 +465,7 @@
 				FF76EC50245E2EF2004F766C /* SizesCluster.swift in Sources */,
 				FF76EC4C245E2454004F766C /* PhotoData.swift in Sources */,
 				FF73D742245C95B100DE8027 /* API.swift in Sources */,
+				FF6B8E612460FB7A00FAC7B4 /* PageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,9 +14,6 @@ let bf = UIImage(named: "bf")!
 
 
 struct ContentView : View {
-    
-    var images : [UIImage] = [code, bf, code, bf, code, bf, code, bf ]
-    @State var urls : [URL] = []
     @State private var query = "???"
     @ObservedObject private var model = PageViewModel()
     
@@ -24,8 +21,8 @@ struct ContentView : View {
         VStack {
             ZStack {
                 Rectangle()
-                .padding(.horizontal, 30.0)
-                .frame(width: nil, height: 30.0)
+                    .padding(.horizontal, 30.0)
+                    .frame(width: nil, height: 30.0)
                 Text("Image Gallery").font(.system(size:34))
                     .fontWeight(.heavy)
                     .foregroundColor(Color.white)
@@ -34,21 +31,17 @@ struct ContentView : View {
             HStack {
                 Text("Search")
                 TextField("??", text: $query) .font(Font.system(size: 15, weight: .medium, design: .serif))
-                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button("Search", action: {
                     self.model.loadPhotos(query: self.query, page: 1)
-                    })
+                })
             }.padding(.horizontal, 20)
             GridView(model: model)
         }
         
     }
 }
-struct ImageURL : Identifiable {
-    var id: ObjectIdentifier
-    var images : UIImage
-    var url : URL
-}
+
 struct GridView: View {
     var images : [UIImage] = []
     var urls : [URL] {
@@ -71,16 +64,13 @@ struct GridView: View {
                 i in
                 HStack(alignment: .center) {
                     ForEach(0..<2) {
-                       j in
-//                        Image(uiImage: self.images[i*2+j])
-//                        .resizable().scaledToFit()
+                        j in
                         WebImage(url: self.urlFor(i: i, j: j))
-                        // Supports options and context, like `.delayPlaceholder` to show placeholder only when error
-                        .onSuccess { image, cacheType in
-                            // Success
-                        }
-                        .resizable() // Resizable like SwiftUI.Image, you must use this modifier or the view will use the image bitmap size
-                        .placeholder(Image(systemName: "star"))
+                            // Supports options and context, like `.delayPlaceholder` to show placeholder only when error
+                            .onSuccess { image, cacheType in
+                            }
+                            .resizable() // Resizable like SwiftUI.Image, you must use this modifier or the view will use the image bitmap size
+                            .placeholder(Image(systemName: "photo"))
                     }.scaledToFit()
                 }.scaledToFill()
             }
